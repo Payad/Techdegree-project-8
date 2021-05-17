@@ -5,6 +5,7 @@ body {
 
 h1 {
     font-size: 10px;
+    margin-bottom: 20px;
 }
 
 .overlay {
@@ -179,4 +180,45 @@ hr {
 
 @media (min-width: 1024px) {
 
+    h2.name {
+        margin-top: 22px;
+    }
+
+
+    main.grid-container {
+        column-gap: 318px;
+        row-gap: 15px;
+    }
+    
+    .card {
+        width: 320px;
+        height: 140px;
+    }
+
+    img.avatar {
+        height: 100px;
+        margin-left: 16px;
+        margin-top: 20px;
+    }
+
+    p.email {
+        font-size: 13px;
+
+    }
+
+    p.address {
+        font-size: 12px;
+    }
+    .modal {
+        width: 275px;
+        height: 300px;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-left: 55px;
+    }
 }
