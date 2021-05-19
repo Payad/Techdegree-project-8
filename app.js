@@ -13,6 +13,33 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-text");
 const modalClose = document.querySelector(".modal-close");
+// const input = document.getElementById('search');
+// const filter = input.value.toUpperCase();
+// const ul = document.getElementById('searchList');
+// const li = ul.getELementsByTagName('li');
+// const a;
+// const i;
+// const txtValue;
+
+// function nameList() {
+
+// var input, filter, ul, li, a, i, txtValue;
+// input = document.getElementById('search');
+// filter = input.value.toUpperCase();
+// ul = document.getElementById('searchList');
+// li = ul.getElementsByTagName('li');
+
+// for (i = 0; i < li.length; i++) {
+//     a = li[i].getELementsByTagName("a")[0];
+//     txtValue = a.textContent || a.innerText;
+//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//         li[i].style.display = "";
+
+//     } else {
+//         li[i].style.display = "none";
+//     }
+// }
+// }
         
 //fetch data from API
 
@@ -74,6 +101,9 @@ function displayModal(index) {
 let { name, dob, phone, email, location: {city, street, state, postcode}, picture} = employees[index];    
 let date = new Date(dob.date);
 
+//  leftArrowButton = document.getElementById('left-arrow');
+//  rightArrowButton = document.getElementById('right-arrow');
+
 const modalHTML = `
 <img class="avatar" src="${picture.large}" />
 <div class="text-container">
@@ -86,7 +116,38 @@ const modalHTML = `
 <p>Birthday:
     ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
+    // <button class="arrow" id="left-arrow" onclick="prevModel(${index})"><</button>
+    // <button class="arrow" id="right-arrow" onclick="nextModel(${index})">></button>
+    <button class="arrow" id="left-arrow"><</button>
+    <button class="arrow" id="right-arrow">></button>
+
     `;
+
+{
+    /* <button class="arrow" id="left-arrow"><</button>
+    <button class="arrow" id="right-arrow">></button> */}
+
+    leftArrowButton.addEventListener('click', () =>{
+        let prevIndex = index -= 1;
+        if (prevIndex > -1) {
+            displayModel(prevIndex(index));
+        } else {
+            displayModel(11);
+        }
+    }); 
+
+    rightArrowButton.addEventListener('click', () => {
+let nextIndex = index += 1;
+if (nextIndex < 12) {
+    displayModel(nextIndex);
+} else {
+    displayModel(0);
+}
+
+    });
+
+    
+
 
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
@@ -109,3 +170,24 @@ modalClose.addEventListener('click', () => {
 overlay.classList.add("hidden");
 
 });
+
+//next and previous model arrows
+// function nextModel(index) {
+//     let prevIndex = index -= 1;
+//     if (prevIndex > -1) {
+//         displayModel(prevIndex);
+
+//     } else {
+//         displayModel(11);
+//     }
+// }
+
+// function prevModel(index) {
+//     let nextIndex = index += 1;
+//     if (nextIndex < 12) {
+//         displayModel(nextIndex);
+
+//     } else {
+//         displayModel(0);
+//     }
+// }
