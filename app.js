@@ -116,35 +116,34 @@ const modalHTML = `
 <p>Birthday:
     ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
-    // <button class="arrow" id="left-arrow" onclick="prevModel(${index})"><</button>
-    // <button class="arrow" id="right-arrow" onclick="nextModel(${index})">></button>
-    <button class="arrow" id="left-arrow"><</button>
-    <button class="arrow" id="right-arrow">></button>
+   
+    <button class="arrow" id="left-arrow" onclick="prevModal(${index})"><</button>
+    <button class="arrow" id="right-arrow" onclick="nextModal(${index})">></button>
 
-    `;
+ `;
 
-{
-    /* <button class="arrow" id="left-arrow"><</button>
-    <button class="arrow" id="right-arrow">></button> */}
+// {
+//     /* <button class="arrow" id="left-arrow"><</button>
+//     <button class="arrow" id="right-arrow">></button> */}
 
-    leftArrowButton.addEventListener('click', () =>{
-        let prevIndex = index -= 1;
-        if (prevIndex > -1) {
-            displayModel(prevIndex(index));
-        } else {
-            displayModel(11);
-        }
-    }); 
+//     leftArrowButton.addEventListener('click', () =>{
+//         let prevIndex = index -= 1;
+//         if (prevIndex > -1) {
+//             displayModel(prevIndex(index));
+//         } else {
+//             displayModel(11);
+//         }
+//     }); 
 
-    rightArrowButton.addEventListener('click', () => {
-let nextIndex = index += 1;
-if (nextIndex < 12) {
-    displayModel(nextIndex);
-} else {
-    displayModel(0);
-}
+//     rightArrowButton.addEventListener('click', () => {
+// let nextIndex = index += 1;
+// if (nextIndex < 12) {
+//     displayModel(nextIndex);
+// } else {
+//     displayModel(0);
+// }
 
-    });
+//     });
 
     
 
@@ -171,23 +170,23 @@ overlay.classList.add("hidden");
 
 });
 
-//next and previous model arrows
-// function nextModel(index) {
-//     let prevIndex = index -= 1;
-//     if (prevIndex > -1) {
-//         displayModel(prevIndex);
+// next and previous model arrows
+function prevModal(index) {
+    let prevIndex = index -= 1;
+    if (prevIndex > -1) {
+        displayModal(prevIndex);
 
-//     } else {
-//         displayModel(11);
-//     }
-// }
+    } else {
+        displayModal(11);
+    }
+}
 
-// function prevModel(index) {
-//     let nextIndex = index += 1;
-//     if (nextIndex < 12) {
-//         displayModel(nextIndex);
+function nextModal(index) {
+    let nextIndex = index += 1;
+    if (nextIndex < 12) {
+        displayModal(nextIndex);
 
-//     } else {
-//         displayModel(0);
-//     }
-// }
+    } else {
+        displayModal(0);
+    }
+}
