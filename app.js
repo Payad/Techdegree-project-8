@@ -1,10 +1,4 @@
-// $.ajax({
-//     url: 'https://randomuser.me/api/',
-//     dataType: 'json',
-//     success: function(data) {
-//       console.log(data);
-//     }
-//   });
+
 
 let employees = [];
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
@@ -13,70 +7,7 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-text");
 const modalClose = document.querySelector(".modal-close");
-// const input = document.getElementById('search');
-// const filter = input.value.toUpperCase();
-// const ul = document.getElementById('searchList');
-// const li = ul.getELementsByTagName('li');
-// const a;
-// const i;
-// const txtValue;
 
-// const searchUser = document.getElementById('search');
-// let users = []
-
-
-// searchUser.addEventListener("input", e => {
-//     const element = e.target.value.toLowerCase();
-//     const newUser = users.filter(user => user.name.toLowerCase().includes(element)
-//     )
-    // function showFiltered(arr) {
-    //     output = '';
-    
-    //     arr.forEach(employee, index) 
-    //     if (employee.name === employee) {
-    //         displayEmployees(newUser);
-    //     }
-    
-    // }
-
-//     if (employee.name === employee) {
-//    employees(newUser);
-    // gridContainer.innerHTML = employees;
-    // } 
-// });
-
-// function showFiltered(arr) {
-//     output = '';
-
-//     arr.forEach(employee, index) 
-//     if (employee.name === employee) {
-//         displayEmployees(newUser);
-//     }
-
-// }
-
-
-// const showFiltered = arr => {
-//       output = ''
-
-//     arr.forEach(employee, index) => 
-//     (output += `
-    
-//     <div class="card" data-index="${index}">
-//     <img class="avatar" src="${picture.large}"/>
-//     <div class="text-container">
-//     <h2 class="name">${name.first} ${name.last}</h2>
-//     <p class="email">${email}</p>
-//     <p class="address">${city}</p>
-//     </div>
-//     </div>
-//     `)
-    
-//     gridContainer.innerHTML = output
-// }
-
-
-        
 //fetch data from API
 
 // fetch('https://randomuser.me/api/?results=12&inc=img,firstName,lastName,email,city')
@@ -120,7 +51,6 @@ gridContainer.innerHTML = employeeHTML;
 const searchUser = document.getElementById('search');
 
 searchUser.addEventListener("input", e => {
-    let employees = []
     const element = e.target.value.toLowerCase()
     const newUser = employees.filter(employee => employee.name.toLowerCase().includes(element))
     displayEmployees(newUser);
