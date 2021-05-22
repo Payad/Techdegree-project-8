@@ -21,25 +21,61 @@ const modalClose = document.querySelector(".modal-close");
 // const i;
 // const txtValue;
 
-// function nameList() {
+// const searchUser = document.getElementById('search');
+// let users = []
 
-// var input, filter, ul, li, a, i, txtValue;
-// input = document.getElementById('search');
-// filter = input.value.toUpperCase();
-// ul = document.getElementById('searchList');
-// li = ul.getElementsByTagName('li');
 
-// for (i = 0; i < li.length; i++) {
-//     a = li[i].getELementsByTagName("a")[0];
-//     txtValue = a.textContent || a.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//         li[i].style.display = "";
+// searchUser.addEventListener("input", e => {
+//     const element = e.target.value.toLowerCase();
+//     const newUser = users.filter(user => user.name.toLowerCase().includes(element)
+//     )
+    // function showFiltered(arr) {
+    //     output = '';
+    
+    //     arr.forEach(employee, index) 
+    //     if (employee.name === employee) {
+    //         displayEmployees(newUser);
+    //     }
+    
+    // }
 
-//     } else {
-//         li[i].style.display = "none";
+//     if (employee.name === employee) {
+//    employees(newUser);
+    // gridContainer.innerHTML = employees;
+    // } 
+// });
+
+// function showFiltered(arr) {
+//     output = '';
+
+//     arr.forEach(employee, index) 
+//     if (employee.name === employee) {
+//         displayEmployees(newUser);
 //     }
+
 // }
+
+
+// const showFiltered = arr => {
+//       output = ''
+
+//     arr.forEach(employee, index) => 
+//     (output += `
+    
+//     <div class="card" data-index="${index}">
+//     <img class="avatar" src="${picture.large}"/>
+//     <div class="text-container">
+//     <h2 class="name">${name.first} ${name.last}</h2>
+//     <p class="email">${email}</p>
+//     <p class="address">${city}</p>
+//     </div>
+//     </div>
+//     `)
+    
+//     gridContainer.innerHTML = output
 // }
+
+
         
 //fetch data from API
 
@@ -52,21 +88,6 @@ fetch(urlAPI)
 // .then(data => data.results)
 .then(displayEmployees)
 .catch(err => console.log(err))
-
-// url: 'https://randomuser.me/api/',
-// dataType: 'json',
-// success: function(data) {
-//   console.log(data);
-
-// fetch('https://randomuser.me/api/')
-
-// $.ajax({
-//     url: 'https://randomuser.me/api/',
-//     dataType: 'json',
-//     success: function(data) {
-//       console.log(data);
-//     }
-//   });
 
 function displayEmployees(employeeData) {
     employees = employeeData;
@@ -96,6 +117,15 @@ gridContainer.innerHTML = employeeHTML;
 
 }
 
+const searchUser = document.getElementById('search');
+
+searchUser.addEventListener("input", e => {
+    let employees = []
+    const element = e.target.value.toLowerCase()
+    const newUser = employees.filter(employee => employee.name.toLowerCase().includes(element))
+    displayEmployees(newUser);
+});
+
 function displayModal(index) {
 
 let { name, dob, phone, email, location: {city, street, state, postcode}, picture} = employees[index];    
@@ -112,7 +142,7 @@ const modalHTML = `
 <p class="address">${city}</p>
 <hr/>
 <p>${phone}</p>
-<p class="address">${street.name}, ${state} ${postcode}</p>
+<p class="address">${street.number},${street.name}, ${state} ${postcode}</p>
 <p>Birthday:
     ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
@@ -122,32 +152,7 @@ const modalHTML = `
 
  `;
 
-// {
-//     /* <button class="arrow" id="left-arrow"><</button>
-//     <button class="arrow" id="right-arrow">></button> */}
-
-//     leftArrowButton.addEventListener('click', () =>{
-//         let prevIndex = index -= 1;
-//         if (prevIndex > -1) {
-//             displayModel(prevIndex(index));
-//         } else {
-//             displayModel(11);
-//         }
-//     }); 
-
-//     rightArrowButton.addEventListener('click', () => {
-// let nextIndex = index += 1;
-// if (nextIndex < 12) {
-//     displayModel(nextIndex);
-// } else {
-//     displayModel(0);
-// }
-
-//     });
-
     
-
-
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
 }       
