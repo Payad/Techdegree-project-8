@@ -48,13 +48,44 @@ gridContainer.innerHTML = employeeHTML;
 
 }
 
-const searchUser = document.getElementById('search');
+// const searchUser = document.getElementById('search');
 
-searchUser.addEventListener("input", e => {
-    const element = e.target.value.toLowerCase()
-    const newUser = employees.filter(employee => employee.name.toLowerCase().includes(element))
-    displayEmployees(newUser);
-});
+//Search filter 
+function search_name() {
+    //declare variables
+    input = document.getElementById('search').value;
+    input = input.toLowerCase();
+    employeeName = document.getElementsByClassName('card');
+     let a, textValue;
+
+     //loop through list of names
+    for (i = 0; i < employeeName.length; i++ ) {
+        a = employeeName[i].getElementsByClassName('name')[0];
+        textValue = a.textContent || a.innerText;
+        if (textValue.toLowerCase().indexOf(input) > -1) {
+            employeeName[i].style.display = "";
+        } else {
+            employeeName[i].style.display = "none";
+        }
+        // if (!employeeName[i].innerHTML.toLowerCase().includes(input)) {
+        //     employeeName[i].style.display = "none";
+        // } else {
+        //     employeeName[i].style.display = "";
+        // }
+    }
+}
+
+const searchUser = document.getElementById('search');
+searchUser.addEventListener('keyup', search_name);
+
+// searchUser.addEventListener("input", e => {
+    // const element = e.target.value.toLowerCase()
+    // const newUser = employees.filter(employee => employee.name.toLowerCase().includes(element))
+    // let input = input.value;
+//      filter = input.value.toLowerCase();
+//     const newUser = employees.filter(name => name.first)
+//     displayEmployees(newUser);
+// });
 
 function displayModal(index) {
 
