@@ -10,13 +10,9 @@ const modalClose = document.querySelector(".modal-close");
 
 //fetch data from API
 
-// fetch('https://randomuser.me/api/?results=12&inc=img,firstName,lastName,email,city')
 fetch(urlAPI)
-// fetch('https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob,&noinfo,&nat=US')
 .then(res => res.json())
-// .then(data => console.log(data.response))
 .then(res => res.results)
-// .then(data => data.results)
 .then(displayEmployees)
 .catch(err => console.log(err))
 
@@ -24,6 +20,7 @@ function displayEmployees(employeeData) {
     employees = employeeData;
 // store the employee HTML as we create it
     let employeeHTML = '';
+
 // loop through each employee and create HTML markup
 employees.forEach((employee, index) => {
     let name = employee.name;
@@ -67,33 +64,19 @@ function search_name() {
         } else {
             employeeName[i].style.display = "none";
         }
-        // if (!employeeName[i].innerHTML.toLowerCase().includes(input)) {
-        //     employeeName[i].style.display = "none";
-        // } else {
-        //     employeeName[i].style.display = "";
-        // }
+
     }
 }
 
 const searchUser = document.getElementById('search');
 searchUser.addEventListener('keyup', search_name);
 
-// searchUser.addEventListener("input", e => {
-    // const element = e.target.value.toLowerCase()
-    // const newUser = employees.filter(employee => employee.name.toLowerCase().includes(element))
-    // let input = input.value;
-//      filter = input.value.toLowerCase();
-//     const newUser = employees.filter(name => name.first)
-//     displayEmployees(newUser);
-// });
 
 function displayModal(index) {
 
 let { name, dob, phone, email, location: {city, street, state, postcode}, picture} = employees[index];    
 let date = new Date(dob.date);
 
-//  leftArrowButton = document.getElementById('left-arrow');
-//  rightArrowButton = document.getElementById('right-arrow');
 
 const modalHTML = `
 <img class="avatar" src="${picture.large}" />
