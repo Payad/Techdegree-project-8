@@ -91,8 +91,12 @@ const modalHTML = `
     ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
    
+    <div class="arrows-left">
     <button class="arrow" id="left-arrow" onclick="prevModal(${index})"><</button>
+    </div>
+    <div class="arrows-right">
     <button class="arrow" id="right-arrow" onclick="nextModal(${index})">></button>
+    </div
 
  `;
 

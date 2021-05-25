@@ -24,18 +24,19 @@ input#search {
     right: 0;
     bottom: 0;
     background: rgba(100, 100, 100, 0.4);
-   margin-right: -7px;
+   /* margin-right: -7px; */
 }
 .modal {
     width: 120px;
-    margin: 6% 30% auto;
+    /* margin: 6% 30% auto; */
+    margin: 14% auto;
     position: relative;
     text-align: center;
     background: #fff;
     border-radius: 5px;
     padding: 30px 20px;
-    margin-top: 50px;
-    margin-left: 65px;
+    /* margin-top: 50px;
+    margin-left: 65px; */
 }
 
 .modal-close {
@@ -106,7 +107,7 @@ img.avatar {
     margin-top: 14px;
     border-radius: 60px;
     margin-left: 5px;
-    margin-bottom: -8px;
+    /* margin-bottom: -8px; */
 }
 
 
@@ -120,7 +121,14 @@ p.email {
 p.address {
     font-size: 4px;
     color: gray;
-    margin-top: -9px;
+    /* margin-top: -9px; */
+    margin-bottom: 15px;
+}
+
+p.address1 {
+    font-size: 4px;
+    color: gray;
+    margin-top: 7px;
 }
 
 p {
@@ -128,7 +136,7 @@ p {
     color: gray;
     display: block;
     margin-bottom: 10px;
-    margin-top: -8px;
+    /* margin-top: -8px; */
 }
 hr {
     margin-bottom: 20px;
@@ -165,7 +173,7 @@ hr {
         top: 0;
         left: 0;
         margin-top: 150px;
-        margin-left: -36px;
+        /* margin-left: -36px; */
         height: 30px;
         width: 30px;
     }
@@ -191,15 +199,15 @@ hr {
     }
     p.email {
         font-size: 10px;
-        margin-bottom: 14px;
+        margin-bottom: 10px;
     }
     p.address {
         font-size: 10px;
     }
     .modal {
         width: 200px;
-        height: 245px;
-        margin-left: 260px;
+        /* height: 245px; */
+        /* margin-left: 260px; */
     }
     hr {
         margin-bottom: 30px;
@@ -209,25 +217,26 @@ hr {
         margin-bottom: 20px;
         font-size: 10px;
     }
-    .overlay {
+    /* .overlay {
         margin-top: 40px;
         margin-right: -45px;
-    }
+    } */
 }
 
 @media (min-width: 1024px) {
 
     h1 {
-        margin-left: 340px;
+        margin-left: 420px;
     }
 
     h2.name {
         margin-top: 22px;
+        margin-bottom: 8px;
     }
     input#search {
-        margin-left: 365px;
+        margin-left: 435px;
         height: 30px;
-        width: 260px;
+        width: 290px;
     }
 
     main.grid-container {
@@ -255,7 +264,7 @@ hr {
         top: 0;
         left: 0;
         margin-top: 150px;
-        margin-left: 322px;
+        /* margin-left: 322px; */
         height: 30px;
         width: 30px;
     }
@@ -275,9 +284,11 @@ hr {
         font-size: 12px;
     }
     .modal {
-        width: 275px;
-        height: 300px;
-        margin-left: 342px;
+        /* width: 275px; */
+        height: 350px;
+        /* margin-left: 342px; */
+        /* display: inline-block; */
+        
     }
 
     .overlay {
