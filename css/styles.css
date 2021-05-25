@@ -85,8 +85,8 @@ input#search {
 
 main.grid-container {
     display: grid;
-    grid-template-columns: 40px 40px 40px;
-    column-gap: 65px;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* column-gap: 65px; */
     row-gap: 5px;
 }
 
@@ -148,9 +148,9 @@ hr {
         width: 215px;
     }
 
-    main.grid-container {
+    /* main.grid-container {
         column-gap: 214px;
-    }
+    } */
     .text-container {
         margin-left: 10px;
     }
@@ -231,7 +231,7 @@ hr {
     }
 
     main.grid-container {
-        column-gap: 300px;
+        /* column-gap: 300px; */
         row-gap: 15px;
     }
     
